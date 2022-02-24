@@ -38,15 +38,15 @@ namespace Zombie_Tracker
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string cs = @"server=localhost;user=root;database=testdb;port=3306;password=******";
+            string cs = @"server=127.0.0.1;uid=root@localhost;database=zombies;password=";
             MySqlConnection con = new MySqlConnection(cs);
             try
             {
                 con.Open();
-                string query = $@"INSERT INTO Zombie(1,2,3) VALUES(a,b,c);";
-                MySqlCommand cmd = new MySqlCommand(query,  con);
-                cmd.ExecuteNonQuery();
-
+                //string query = $@"INSERT INTO Walker(Name) VALUES('a','b','c');";
+                //MySqlCommand cmd = new MySqlCommand(query,  con);
+                //cmd.ExecuteNonQuery();
+                /*
                 int randNumb = rand.Next(0, typeArray.Length);
                 IZombie zomb;
 #pragma warning disable CS8632 // The annotation for nullable reference types should only be used in code within a '#nullable' annotations context.
@@ -58,6 +58,7 @@ namespace Zombie_Tracker
                 locationValue.Content = zomb.LastKnownLocation;
                 specialtyValue.Content = zomb.Specialty;
                 brainsValue.Content = zomb.EatsBrains ? "yes" : "no";
+                */
             }
             catch (Exception ex)
             {
